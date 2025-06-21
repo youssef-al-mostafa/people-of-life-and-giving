@@ -35,7 +35,7 @@ const Banner = ({ loading, attrs }: BannerProps) => {
 
     return (
         <section id="home" className="hero bg-[#363543] h-[calc(100vh-140px)]
-                                      relative overflow-hidden mt-[124px]">
+                                      relative overflow-hidden mt-[104px]">
             <SvgIcon
                 name="blob"
                 className="w-[50vw] absolute"

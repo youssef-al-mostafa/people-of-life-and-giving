@@ -12,7 +12,7 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme {
-    --font-sans: 'Josefin Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    --font-sans: 'Quicksand', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 
     --font-instrument: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 
@@ -65,6 +65,7 @@
 }
 
 @layer base {
+
     *,
     ::after,
     ::before,
@@ -73,23 +74,36 @@
         border-color: var(--color-gray-200, currentColor);
     }
 
-    h1, h2, h3, h4, h5, h6 {
-        font-family: 'Josefin Sans', ui-sans-serif, system-ui, sans-serif;
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: 'Quicksand', ui-sans-serif, system-ui, sans-serif;
         color: black;
     }
 
-    p, span, div, a, button, input, textarea, select, label {
-        font-family: 'Josefin Sans', ui-sans-serif, system-ui, sans-serif;
+    p,
+    span,
+    div,
+    a,
+    button,
+    input,
+    textarea,
+    select,
+    label {
+        font-family: 'Quicksand', ui-sans-serif, system-ui, sans-serif;
         color: black;
     }
 }
 
 @layer utilities {
-    .font-josefin {
-        font-family: var(--font-josefin);
+    .font-quicksand {
+        font-family: 'Quicksand', ui-sans-serif, system-ui, sans-serif;
     }
 
-      .hero-text-enter {
+    .hero-text-enter {
         animation: slideInLeft 0.8s ease-out;
     }
 
@@ -98,6 +112,7 @@
             opacity: 0;
             transform: translateX(-50px);
         }
+
         to {
             opacity: 1;
             transform: translateX(0);
