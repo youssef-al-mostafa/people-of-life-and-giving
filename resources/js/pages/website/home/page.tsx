@@ -4,7 +4,8 @@ import { usePage } from '@inertiajs/react';
 import About from './About';
 import Vision from './Vision';
 import Contact from './Contact';
-import Portfolio from './Media';
+import Portfolio from './Collaboration';
+import Collaboration from './Collaboration';
 
 interface HomeProps {
     [key: string]: any;
@@ -20,9 +21,7 @@ export default function Home() {
         <WebsiteLayout title="Home" description="Welcome to our website">
             <Banner attrs={pageData.attrs} />
             <About />
-            <Vision />
-            <Portfolio />
-            <Contact />
+            <Collaboration />
         </WebsiteLayout>
     );
 }

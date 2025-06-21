@@ -1,195 +1,81 @@
-// resources/js/components/website/Footer.tsx
 import React from 'react';
-import SvgIcon from '@/components/common/svgIcon';
 
-interface SocialLink {
-    name: 'facebook' | 'twitter' | 'instagram' | 'linkedin' | 'threads';
-    url: string;
-}
-
-interface CompanyLink {
-    name: string;
-    url: string;
-}
-
-const Footer: React.FC = () => {
-    const socialLinks: SocialLink[] = [
-        { name: 'facebook', url: 'https://www.facebook.com/husseinzeid' },
-        { name: 'twitter', url: 'https://www.twitter.com/husseinzeid' },
-        { name: 'instagram', url: 'https://www.instagram.com/husseinzeid' },
-        { name: 'linkedin', url: 'https://www.linkedin.com/in/husseinzeid' },
-        { name: 'threads', url: 'https://www.threads.net/@husseinzeid' },
-    ];
-
-    const companies: CompanyLink[] = [
-        { name: 'QUAD Digital Media', url: '#' },
-        { name: 'QUAD Academy', url: '#' },
-        { name: 'The Business House', url: '#' },
-    ];
-
-    const quickLinks = [
-        { name: 'About', url: '#about' },
-        { name: 'Vision into Action', url: '#vision' },
-        { name: 'Portfolio', url: '#portfolio' },
-        { name: 'Contact', url: '#contact' },
-    ];
-
-    const contactInfo = {
-        email: 'hello@husseinzeid.com',
-        phone: '+961 70 123 456',
-        location: 'Beirut, Lebanon'
-    };
-
-    const currentYear = new Date().getFullYear();
-
+const Footer = () => {
     return (
-        <footer className="bg-[#363543] text-white relative overflow-hidden">
-            <div className="absolute inset-0 overflow-hidden">
-                <SvgIcon
-                    name="blob"
-                    className="w-[60vw] absolute -bottom-20 -left-20 opacity-5 rotate-12"
-                    size="60vw"
-                />
+        <footer
+            className="relative overflow-hidden"
+            style={{
+                background: 'linear-gradient(135deg, #1a4d3a 0%, #0f2922 50%, #2d5a3d 100%)',
+            }}
+        >
+            <div className="absolute inset-0 opacity-5">
+                <div className="absolute top-10 left-10 w-32 h-32 bg-green-400 rounded-full blur-3xl"></div>
+                <div className="absolute bottom-10 right-10 w-40 h-40 bg-green-500 rounded-full blur-3xl"></div>
+                <div className="absolute top-1/2 left-1/3 w-24 h-24 bg-green-300 rounded-full blur-2xl"></div>
             </div>
 
-            <div className="max-w-[1350px] mx-auto px-4 lg:px-8 relative z-10">
+            <div className="relative z-10 max-w-7xl mx-auto px-4 lg:px-8">
+                <div className="py-16 lg:py-20">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
 
-                <div className="pt-16 lg:pt-20 pb-12">
-                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
-                        <div className="lg:col-span-1">
-                            <div className="mb-6">
-                                <h3 className="text-2xl lg:text-3xl font-bold mb-4
-                                              bg-gradient-to-r from-white to-gray-300
-                                              bg-clip-text text-transparent">
-                                    Hussein Zeid
-                                </h3>
-                                <div className="w-16 h-1 bg-orange-400 rounded-full mb-6"></div>
-                                <p className="text-gray-300 leading-relaxed max-w-md">
-                                    Passionate entrepreneur and creative leader transforming ideas into reality
-                                    through digital innovation, education, and strategic business development.
-                                </p>
-                            </div>
-                            <div className="mb-8">
-                                <h4 className="text-orange-400 font-medium uppercase tracking-wider text-sm mb-4">
-                                    Follow the Journey
-                                </h4>
-                                <div className="flex space-x-4">
-                                    {socialLinks.map(({ name, url }) => (
-                                        <a
-                                            key={name}
-                                            href={url}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="w-12 h-12 bg-white/10 backdrop-blur-sm border border-white/20
-                                                     rounded-xl flex items-center justify-center
-                                                      hover:border-orange-400/40
-                                                     transition-all duration-300 group"
-                                            aria-label={`Visit our ${name} page`}
-                                        >
-                                            <SvgIcon
-                                                name={name}
-                                                size={24}
-                                                className="text-white group-hover:text-orange-400
-                                                         transition-colors duration-300"
-                                            />
-                                        </a>
-                                    ))}
+                        <div className="lg:col-span-2">
+                            <div className="flex items-center mb-6">
+                                <div className="w-12 h-12 rounded-lg
+                                                flex items-center justify-center mr-4
+                                                text-white">
+                                   <img src="/images/logos/logo-white.png"
+                                        alt="Logo"
+                                        className='text-white'
+                                        loading='lazy' />
                                 </div>
+                                <h3 className="text-2xl font-bold text-white">People of Life and Giving</h3>
                             </div>
+
+                            <p className="text-gray-300 text-lg leading-relaxed mb-6 max-w-md">
+                                Dedicated to transforming lives and building stronger communities through
+                                compassion, support, and essential resources for those in need.
+                            </p>
                         </div>
-                        <div className='lg:col-span-2 flex justify-end gap-20'>
-                            <div>
-                                <h4 className="text-orange-400 font-medium uppercase tracking-wider text-sm mb-6">
-                                    Companies
-                                </h4>
-                                <ul className="space-y-4">
-                                    {companies.map((company, index) => (
-                                        <li key={index}>
-                                            <a
-                                                href={company.url}
-                                                className="text-gray-300 hover:text-orange-400 transition-colors
-                                                     duration-300 flex items-center group"
-                                            >
-                                                <span className="w-2 h-2 bg-orange-400/50 rounded-full mr-3
-                                                           group-hover:bg-orange-400 transition-colors duration-300"></span>
-                                                {company.name}
-                                            </a>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
-                            <div>
-                                <h4 className="text-orange-400 font-medium uppercase tracking-wider text-sm mb-6">
-                                    Quick Links
-                                </h4>
-                                <ul className="space-y-4 mb-8">
-                                    {quickLinks.map((link, index) => (
-                                        <li key={index}>
-                                            <a
-                                                href={link.url}
-                                                className="text-gray-300 hover:text-orange-400 transition-colors
-                                                     duration-300 flex items-center group"
-                                            >
-                                                <span className="w-2 h-2 bg-orange-400/50 rounded-full mr-3
-                                                           group-hover:bg-orange-400 transition-colors duration-300"></span>
-                                                {link.name}
-                                            </a>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
-                            <div>
-                                <h4 className="text-orange-400 font-medium uppercase tracking-wider text-sm mb-4">
-                                    Get in Touch
-                                </h4>
-                                <div className="space-y-3 text-sm">
-                                    <a
-                                        href={`mailto:${contactInfo.email}`}
-                                        className="text-gray-300 hover:text-orange-400 transition-colors duration-300
-                                                 block"
-                                    >
-                                        {contactInfo.email}
-                                    </a>
-                                    <a
-                                        href={`tel:${contactInfo.phone.replace(/\s/g, '')}`}
-                                        className="text-gray-300 hover:text-orange-400 transition-colors duration-300
-                                                 block"
-                                    >
-                                        {contactInfo.phone}
-                                    </a>
-                                    <span className="text-gray-400 block">
-                                        {contactInfo.location}
-                                    </span>
-                                </div>
-                            </div>
+
+                        <div>
+                            <h4 className="text-lg font-bold text-white mb-6">Quick Links</h4>
+                            <ul className="space-y-3">
+                                <li><a href="#about" className="text-gray-300 hover:text-green-400 transition-colors duration-300">About Us</a></li>
+                                <li><a href="#services" className="text-gray-300 hover:text-green-400 transition-colors duration-300">Our Programs</a></li>
+                                <li><a href="#collaboration" className="text-gray-300 hover:text-green-400 transition-colors duration-300">Collaborations</a></li>
+                                <li><a href="#impact" className="text-gray-300 hover:text-green-400 transition-colors duration-300">Our Impact</a></li>
+                                <li><a href="#volunteer" className="text-gray-300 hover:text-green-400 transition-colors duration-300">Volunteer</a></li>
+                                <li><a href="#contact" className="text-gray-300 hover:text-green-400 transition-colors duration-300">Contact Us</a></li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h4 className="text-lg font-bold text-white mb-6">Get Involved</h4>
+                            <ul className="space-y-3">
+                                <li><a href="#donate" className="text-gray-300 hover:text-green-400 transition-colors duration-300">Donate Now</a></li>
+                                <li><a href="#volunteer" className="text-gray-300 hover:text-green-400 transition-colors duration-300">Become a Volunteer</a></li>
+                                <li><a href="#partner" className="text-gray-300 hover:text-green-400 transition-colors duration-300">Partner With Us</a></li>
+                                <li><a href="#fundraise" className="text-gray-300 hover:text-green-400 transition-colors duration-300">Fundraise</a></li>
+                                <li><a href="#sponsor" className="text-gray-300 hover:text-green-400 transition-colors duration-300">Corporate Sponsors</a></li>
+                                <li><a href="#newsletter" className="text-gray-300 hover:text-green-400 transition-colors duration-300">Newsletter</a></li>
+                            </ul>
                         </div>
                     </div>
                 </div>
 
-                <div className="border-t border-gray-600/50 py-8">
+                <div className="py-6 border-t border-green-400 border-opacity-20">
                     <div className="flex flex-col lg:flex-row justify-between items-center space-y-4 lg:space-y-0">
-                        <div className="text-gray-400 text-sm text-center lg:text-left">
-                            © {currentYear} Hussein Zeid. All rights reserved.
+                        <div className="text-gray-300 text-sm">
+                            © {new Date().getFullYear()} People of Life and Giving. All rights reserved.
                         </div>
-
-                        <div className="flex flex-col lg:flex-row items-center space-y-2 lg:space-y-0 lg:space-x-6
-                                       text-sm text-gray-400">
-                            <a href="#"
-                               className="hover:text-orange-400 transition-colors
-                                          duration-300 text-white">
-                                Privacy Policy
-                            </a>
-                            <a href="#"
-                               className="hover:text-orange-400 transition-colors
-                                          duration-300 text-white">
-                                Terms & Conditions
-                            </a>
-                            {/* <span className="text-gray-500">
-                                Made with ❤️ in Lebanon
-                            </span> */}
+                        <div className="flex space-x-6 text-sm">
+                            <a href="#privacy" className="text-gray-300 hover:text-green-400 transition-colors duration-300">Privacy Policy</a>
+                            <a href="#terms" className="text-gray-300 hover:text-green-400 transition-colors duration-300">Terms of Service</a>
+                            <a href="#cookies" className="text-gray-300 hover:text-green-400 transition-colors duration-300">Cookie Policy</a>
                         </div>
                     </div>
                 </div>
+
             </div>
         </footer>
     );

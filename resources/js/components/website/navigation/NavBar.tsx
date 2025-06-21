@@ -62,7 +62,7 @@ const Navbar = () => {
 
     return (
         <nav className='fixed top-0 w-full z-50 transition-all duration-300 bg-white backdrop-blur-lg
-                         border-b border-gray-200/50 shadow-lg shadow-black/5'>
+                         border-b border-gray-200/50'>
             <div className="navbar max-w-[1350px] mx-auto transition-all duration-300 backdrop-blur-sm py-1">
                 <div className="navbar-start">
                     <div className="dropdown">

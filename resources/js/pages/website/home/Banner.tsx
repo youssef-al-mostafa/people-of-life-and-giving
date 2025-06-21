@@ -1,13 +1,9 @@
 import SvgIcon from "@/components/common/svgIcon";
+import { Heart } from "lucide-react";
 
 interface BannerProps {
     loading?: boolean;
     attrs: Record<string, any>;
-}
-
-interface SocialLink {
-    name: 'facebook' | 'twitter' | 'instagram' | 'linkedin' | 'threads';
-    url: string;
 }
 
 const Banner = ({ loading, attrs }: BannerProps) => {
@@ -15,96 +11,87 @@ const Banner = ({ loading, attrs }: BannerProps) => {
         return <div className="min-h-[300px] flex items-center justify-center">Loading...</div>;
     }
 
-    const content = {
-        greeting: "I'm",
-        bannerText: "Hussein Zeid",
-        bannerSubtitle: "a passionate entrepreneur and creative leader with over 10 years of experience in media, education, and digital transformation.",
-        heroImage: "/images/hero/hero-image.png",
-        heroAlt: "Hero background",
-        servicesLabel: "Services",
-        servicesBannerText: "Follow me on social media for insights into branding, content creation, business growth, and the journey of building modern Lebanese ventures.",
-    };
-
-    const socialLinks: SocialLink[] = [
-        { name: 'facebook', url: 'https://www.facebook.com/fakeprofile' },
-        { name: 'twitter', url: 'https://www.twitter.com/fakeprofile' },
-        { name: 'instagram', url: 'https://www.instagram.com/fakeprofile' },
-        { name: 'linkedin', url: 'https://www.linkedin.com/in/fakeprofile' },
-        { name: 'threads', url: 'https://www.threads.net/@fakeprofile' },
-    ];
-
     return (
-        <section id="home" className="hero bg-[#363543] h-[calc(100vh-140px)]
-                                      relative overflow-hidden mt-[104px]">
-            <SvgIcon
-                name="blob"
-                className="w-[50vw] absolute"
-                size="50vw"
-            />
+        <section
+            id="home"
+            className="min-h-screen relative overflow-hidden bg-white mt-[105px]">
 
-            <div className="hero-content max-w-[1350px] flex flex-col lg:flex-row items-center
-                            justify-between p-4 lg:p-0 w-full h-full relative z-10 mx-auto
-                            px-4 lg:px-8 gap-8 lg:gap-0">
+            <div className="hero-content max-w-[1350px] flex flex-col items-center
+                      justify-center text-center min-h-screen relative
+                      z-10 mx-auto px-4 lg:px-8">
 
-                <div className="flex-1 text-white space-y-4 lg:space-y-6 max-w-lg text-center
-                                lg:text-left transition-transform-opacity">
-                    <p className="lg:text-xl text-7xl text-gray-300 font-light">
-                        {content.greeting}
-                    </p>
-
-                    <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight
-                                   bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
-                        {content.bannerText}
+                <div className="mb-8">
+                    <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl
+                         font-bold text-green-900 mb-6">
+                        People of {' '}
+                        <span className="text-green-400">life</span>{' '}
+                        and giving
                     </h1>
-
-                    <div className="relative flex flex-col items-center lg:items-start">
-                        <span className="mb-4 before:content-[''] before:block before:w-16 before:h-1
-                                       before:bg-orange-400 before:rounded-full before:mx-auto before:lg:mx-0"></span>
-                        <p className="text-gray-300 text-sm sm:text-base lg:text-lg leading-relaxed
-                                     max-w-md mx-auto lg:mx-0">
-                            {content.bannerSubtitle}
-                        </p>
-                    </div>
                 </div>
 
-                <div className="flex-1 hero-image h-auto lg:h-full w-full lg:w-[35%] flex justify-center
-                               items-center lg:justify-center order-first lg:order-none">
-                    <img
-                        className="w-auto h-[300px] sm:h-[400px] lg:h-[calc(100vh-140px)] max-w-full
-                                 object-contain relative z-20"
-                        src={content.heroImage}
-                        alt={content.heroAlt}
-                        loading="lazy"
-                    />
+                <div className="mb-16">
+                    <button
+                        className="group bg-transparent border-2 border-green-400 text-green-400
+                                 px-8 py-4 rounded-full text-lg font-medium hover:bg-green-400 hover:text-white
+                                 transition-colors duration-300 flex items-center gap-3">
+                        Make a Difference
+                    </button>
                 </div>
 
-                <div className="h-full mt-[20vh] flex-1 max-w-sm lg:max-w-md text-white space-y-4 lg:space-y-6
-                               text-center lg:text-right transition-transform-opacity lg:pl-8">
-                    <div className="text-sm lg:text-base text-orange-400 font-medium
-                                    uppercase tracking-wider">
-                        {content.servicesLabel}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-6xl">
+
+                    <div className="bg-green-500 rounded-2xl p-8 text-white relative
+                      overflow-hidden group hover:scale-105 transition-transform
+                      duration-300">
+                        <div className="absolute top-4 right-4 opacity-30">
+                            <Heart size={64}/>
+                        </div>
+                        <div className="relative z-10">
+                            <div className="w-12 h-12 bg-white bg-opacity-20 rounded-lg mb-4 flex items-center justify-center">
+                                <Heart fill="black" size={24}/>
+                            </div>
+                            <h3 className="text-white text-xl font-bold mb-2">Donate Today</h3>
+                            <p className="text-green-100 text-sm">Your contribution directly helps those in need</p>
+                        </div>
                     </div>
 
-                    <h3 className="text-lg lg:text-xl font-semibold leading-tight text-white">
-                        {content.servicesBannerText}
-                    </h3>
-
-                    <div className="flex justify-center lg:justify-end space-x-4 pt-4 gap-3">
-                        {socialLinks.map(({ name, url }) => (
-                            <a
-                                key={name}
-                                href={url}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="transition-colors duration-200
-                                           hover:text-orange-400 text-white"
-                                aria-label={`Visit our ${name} page`}
-                            >
-                                <SvgIcon name={name} size={32} />
-                            </a>
-                        ))}
+                    <div className="bg-orange-500 rounded-2xl p-8 text-white relative overflow-hidden group hover:scale-105 transition-transform duration-300">
+                        <div className="absolute top-4 right-4 opacity-30">
+                            <svg className="w-18 h-18" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z" />
+                            </svg>
+                        </div>
+                        <div className="relative z-10">
+                            <div className="w-12 h-12 bg-white bg-opacity-20 rounded-lg mb-4 flex items-center justify-center">
+                                <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z" />
+                                </svg>
+                            </div>
+                            <h3 className="text-white text-xl font-bold mb-2">Food Relief</h3>
+                            <p className="text-orange-100 text-sm">
+                                Providing meals and nutrition to families in need</p>
+                        </div>
                     </div>
+
+                    <div className="bg-green-800 rounded-2xl p-8 text-white relative overflow-hidden group hover:scale-105 transition-transform duration-300">
+                        <div className="absolute top-4 right-4 opacity-30">
+                            <svg className="w-18 h-18" fill="currentColor" viewBox="0 0 20 20">
+                                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                            </svg>
+                        </div>
+                        <div className="relative z-10">
+                            <div className="w-12 h-12 bg-white bg-opacity-20 rounded-lg mb-4 flex items-center justify-center">
+                                <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                                </svg>
+                            </div>
+                            <h3 className="text-white text-xl font-bold mb-2">Our Impact</h3>
+                            <p className="text-green-200 text-sm">Discover how we're changing lives together</p>
+                        </div>
+                    </div>
+
                 </div>
+
             </div>
         </section>
     );
