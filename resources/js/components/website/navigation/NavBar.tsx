@@ -123,39 +123,17 @@ const Navbar = () => {
                                 onClick={(e) => handleNavClick(e, 'about')}
                                 className={`rounded-lg px-4 py-2 transition-all duration-300 transform
                                            hover:scale-105 relative group font-medium bg-transparent
-                                           focus:bg-transparent active:bg-transparent text-black${isScrolled
-                                        ? ' hover:text-[#363543]'
-                                        : ' hover:text-white/9'
-                                    } ${activeSection === 'about'
-                                        ? isScrolled
-                                            ? ' text-[#363543] font-semibold'
-                                            : ' text-white font-semibold'
-                                        : ''
-                                    }`}>
+                                           focus:bg-transparent active:bg-transparent text-black`}>
                                 About Us
-                                <span className={`absolute bottom-0 left-1/2 h-0.5 transition-all duration-300 transform -translate-x-1/2 ${activeSection === 'about' ? 'w-4/5' : 'w-0 group-hover:w-4/5'
-                                    } ${isScrolled ? 'bg-[#363543]' : 'bg-white'
-                                    }`}></span>
                             </a>
                         </li>
                         <li>
-                            <a href="#about"
-                                onClick={(e) => handleNavClick(e, 'about')}
+                            <a href="#donate"
+                                onClick={(e) => handleNavClick(e, 'donate')}
                                 className={`rounded-lg px-4 py-2 transition-all duration-300 transform
                                            hover:scale-105 relative group font-medium bg-transparent
-                                           focus:bg-transparent active:bg-transparent text-black${isScrolled
-                                        ? ' hover:text-[#363543]'
-                                        : ' hover:text-white/9'
-                                    } ${activeSection === 'about'
-                                        ? isScrolled
-                                            ? ' text-[#363543] font-semibold'
-                                            : ' text-white font-semibold'
-                                        : ''
-                                    }`}>
+                                           focus:bg-transparent active:bg-transparent text-black`}>
                                 Donate
-                                <span className={`absolute bottom-0 left-1/2 h-0.5 transition-all duration-300 transform -translate-x-1/2 ${activeSection === 'about' ? 'w-4/5' : 'w-0 group-hover:w-4/5'
-                                    } ${isScrolled ? 'bg-[#363543]' : 'bg-white'
-                                    }`}></span>
                             </a>
                         </li>
                     </ul>
@@ -165,10 +143,7 @@ const Navbar = () => {
                     }`}>
                     <a href="#home"
                         className={`font-bold text-xl transition-all duration-300
-                                    transform hover:scale-105 text-[#363543] ${isScrolled
-                                ? 'hover:text-[#363543]/80'
-                                : 'hover:text-white/90'
-                            }`}
+                                    transform hover:scale-105 text-[#363543]`}
                         onClick={(e) => handleNavClick(e, 'home')}>
                         <img src="/images/logos/logo_no_bg_small.png"
                             className="w-[96px]"
@@ -178,43 +153,21 @@ const Navbar = () => {
                 <div className="navbar-end">
                     <ul className="menu menu-horizontal px-1 text-lg space-x-1">
                         <li>
-                            <a href="#about"
-                                onClick={(e) => handleNavClick(e, 'about')}
+                            <a href="#collaboration"
+                                onClick={(e) => handleNavClick(e, 'collaboration')}
                                 className={`rounded-lg px-4 py-2 transition-all duration-300 transform
                                            hover:scale-105 relative group font-medium bg-transparent
-                                           focus:bg-transparent active:bg-transparent text-black${isScrolled
-                                        ? ' hover:text-[#363543]'
-                                        : ' hover:text-white/9'
-                                    } ${activeSection === 'about'
-                                        ? isScrolled
-                                            ? ' text-[#363543] font-semibold'
-                                            : ' text-white font-semibold'
-                                        : ''
-                                    }`}>
+                                           focus:bg-transparent active:bg-transparent text-black`}>
                                 Our Collaboration
-                                <span className={`absolute bottom-0 left-1/2 h-0.5 transition-all duration-300 transform -translate-x-1/2 ${activeSection === 'about' ? 'w-4/5' : 'w-0 group-hover:w-4/5'
-                                    } ${isScrolled ? 'bg-[#363543]' : 'bg-white'
-                                    }`}></span>
                             </a>
                         </li>
                         <li>
-                            <a href="#about"
-                                onClick={(e) => handleNavClick(e, 'about')}
+                            <a href="#contact"
+                                onClick={(e) => handleNavClick(e, 'contact')}
                                 className={`rounded-lg px-4 py-2 transition-all duration-300 transform
                                            hover:scale-105 relative group font-medium bg-transparent
-                                           focus:bg-transparent active:bg-transparent text-black${isScrolled
-                                        ? ' hover:text-[#363543]'
-                                        : ' hover:text-white/9'
-                                    } ${activeSection === 'about'
-                                        ? isScrolled
-                                            ? ' text-[#363543] font-semibold'
-                                            : ' text-white font-semibold'
-                                        : ''
-                                    }`}>
+                                           focus:bg-transparent active:bg-transparent text-black`}>
                                 Conact Us
-                                <span className={`absolute bottom-0 left-1/2 h-0.5 transition-all duration-300 transform -translate-x-1/2 ${activeSection === 'about' ? 'w-4/5' : 'w-0 group-hover:w-4/5'
-                                    } ${isScrolled ? 'bg-[#363543]' : 'bg-white'
-                                    }`}></span>
                             </a>
                         </li>
                     </ul>

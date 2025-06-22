@@ -2,10 +2,8 @@ import Banner from '@/pages/website/home/Banner';
 import WebsiteLayout from '@/layouts/WebsiteLayout';
 import { usePage } from '@inertiajs/react';
 import About from './About';
-import Vision from './Vision';
-import Contact from './Contact';
-import Portfolio from './Collaboration';
 import Collaboration from './Collaboration';
+import Donate from './Donate';
 
 interface HomeProps {
     [key: string]: any;
@@ -22,6 +20,7 @@ export default function Home() {
             <Banner attrs={pageData.attrs} />
             <About />
             <Collaboration />
+            <Donate />
         </WebsiteLayout>
     );
 }

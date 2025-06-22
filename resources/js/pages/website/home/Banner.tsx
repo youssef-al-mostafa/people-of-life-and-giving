@@ -25,7 +25,10 @@ const Banner = ({ loading, attrs }: BannerProps) => {
                          font-bold text-green-900 mb-6">
                         People of {' '}
                         <span className="text-green-400">life</span>{' '}
-                        and giving
+                        and
+                        <span className="text-green-400">{' '}
+                            giving
+                        </span>
                     </h1>
                 </div>
 
