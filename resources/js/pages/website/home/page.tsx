@@ -4,6 +4,7 @@ import { usePage } from '@inertiajs/react';
 import About from './About';
 import Collaboration from './Collaboration';
 import Donate from './Donate';
+import Contact from './Contact';
 
 interface HomeProps {
     [key: string]: any;
@@ -21,6 +22,7 @@ export default function Home() {
             <About />
             <Collaboration />
             <Donate />
+            {/* <Contact /> */}
         </WebsiteLayout>
     );
 }

@@ -39,9 +39,9 @@ const Collaboration = () => {
                 </div>
 
                 <div className="mb-20">
-                    <div className="bg-gradient-to-r from-green-500 to-green-600 rounded-2xl p-8 shadow-lg">
+                    <div className="bg-gradient-to-r from-green-500 to-green-600 rounded-2xl p-4 md:p-8 shadow-lg">
                         <h3 className="text-2xl font-bold text-center text-white mb-8">See Our Impact in Action</h3>
-                        <div className="relative max-w-4xl mx-auto">
+                        <div className="relative max-w-full md:max-w-4xl mx-auto">
                             <div className="relative rounded-xl overflow-hidden shadow-2xl bg-black">
                                 <div className="relative pb-[56.25%]">
                                   <Video/>
@@ -58,9 +58,9 @@ const Collaboration = () => {
                     <div className="relative">
                         <div className="absolute left-1/2 transform -translate-x-1/2 w-0.5 h-full bg-green-200 -z-10"></div>
                         <div className="flex flex-col md:flex-row items-center gap-8">
-                            <div className="w-full md:w-1/2 text-right pr-8">
+                            <div className="w-full md:w-1/2 text-center md:text-right pr-0 md:pr-8">
                                 <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow">
-                                    <div className="flex justify-end mb-4">
+                                    <div className="flex justify-center md:justify-end mb-4">
                                         <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
                                             <Heart className="w-6 h-6 text-green-600" />
                                         </div>
@@ -72,7 +72,7 @@ const Collaboration = () => {
                                     </p>
                                 </div>
                             </div>
-                            <div className="w-full md:w-1/2 pl-8">
+                            <div className="w-full md:w-1/2 pl-0 md:pl-8">
                                 <img
                                     src="/images/collaboration/collaboration_1.jpg"
                                     alt="Partnership handshake"
@@ -84,10 +84,10 @@ const Collaboration = () => {
 
                     <div className="relative">
                         <div className="flex flex-col md:flex-row-reverse items-center gap-8">
-                            <div className="w-full h-[100vh] md:w-1/2 text-left pl-8">
-                                <div className='w-full h-full flex flex-col justify-around'>
+                            <div className="w-full h-auto md:h-[100vh] md:w-1/2 text-center md:text-left pl-0 md:pl-8">
+                                <div className='w-full h-full flex flex-col justify-around space-y-8 md:space-y-0'>
                                     <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow">
-                                        <div className="flex justify-start mb-4">
+                                        <div className="flex justify-center md:justify-start mb-4">
                                             <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center">
                                                 <Target className="w-6 h-6 text-orange-600" />
                                             </div>
@@ -100,7 +100,7 @@ const Collaboration = () => {
                                         </p>
                                     </div>
                                     <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow">
-                                        <div className="flex justify-end mb-4">
+                                        <div className="flex justify-center md:justify-end mb-4">
                                             <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
                                                 <Users className="w-6 h-6 text-green-600" />
                                             </div>
@@ -113,11 +113,11 @@ const Collaboration = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className="w-full h-full md:w-1/2 pr-8">
+                            <div className="w-full h-full md:w-1/2 pr-0 md:pr-8">
                                 <img
                                     src="/images/collaboration/collaboration_3.jpg"
                                     alt="Helping communities"
-                                    className="rounded-2xl shadow-lg w-full h-full object-cover"
+                                    className="rounded-2xl shadow-lg w-full h-64 md:h-full object-cover"
                                 />
                             </div>
                         </div>

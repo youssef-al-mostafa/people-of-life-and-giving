@@ -7,6 +7,28 @@ interface BannerProps {
 }
 
 const Banner = ({ loading, attrs }: BannerProps) => {
+
+        const handleNavClick = (
+            e: React.MouseEvent<HTMLAnchorElement | HTMLButtonElement>,
+            sectionId: string
+        ) => {
+            e.preventDefault();
+
+            const element = document.getElementById(sectionId);
+            if (element && sectionId !== 'home') {
+                const offsetTop = element.offsetTop - 100;
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: 'smooth'
+                });
+            } else if (sectionId === 'home') {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            }
+        };
+
     if (loading) {
         return <div className="min-h-[300px] flex items-center justify-center">Loading...</div>;
     }
@@ -18,7 +40,7 @@ const Banner = ({ loading, attrs }: BannerProps) => {
 
             <div className="hero-content max-w-[1350px] flex flex-col items-center
                       justify-center text-center min-h-screen relative
-                      z-10 mx-auto px-4 lg:px-8">
+                      z-10 mx-auto px-4 lg:px-8 pt-[12vh] lg:pt-4">
 
                 <div className="mb-8">
                     <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl
@@ -36,7 +58,8 @@ const Banner = ({ loading, attrs }: BannerProps) => {
                     <button
                         className="group bg-transparent border-2 border-green-400 text-green-400
                                  px-8 py-4 rounded-full text-lg font-medium hover:bg-green-400 hover:text-white
-                                 transition-colors duration-300 flex items-center gap-3">
+                                 transition-colors duration-300 flex items-center gap-3"
+                        onClick={(e) => handleNavClick(e, 'donate')}>
                         Make a Difference
                     </button>
                 </div>

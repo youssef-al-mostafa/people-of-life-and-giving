@@ -50,7 +50,7 @@ const About = () => {
                         </div>
                     </div>
 
-                    <div className="lg:pl-8">
+                    {/* <div className="lg:pl-8">
                         <div className="grid grid-cols-2 gap-6">
 
                             <div className="bg-white bg-opacity-10 backdrop-blur-sm rounded-2xl p-6 text-center border border-green-400 border-opacity-20">
@@ -74,7 +74,7 @@ const About = () => {
                             </div>
 
                         </div>
-                    </div>
+                    </div> */}
 
                 </div>
             </div>
