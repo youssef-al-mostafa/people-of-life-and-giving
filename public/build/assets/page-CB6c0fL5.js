@@ -1,0 +1,1 @@
+import{j as t}from"./app-Czs23nQE.js";import{W as o}from"./WebsiteLayout-D99KSVFT.js";function i(){return t.jsx(o,{title:"About",description:"Welcome to our website",children:"about page"})}export{i as default};
