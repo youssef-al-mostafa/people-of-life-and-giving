@@ -20,14 +20,14 @@ class WebsiteController extends Controller
     }
     public function home(): Response
     {
-        return Inertia::render('home/page', [
+        return Inertia::render('website/home/page', [
             'pageData' => $this->buildPageData('page.home')
         ]);
     }
 
     public function about()
     {
-        return Inertia::render('about/page', [
+        return Inertia::render('website/about/page', [
             'pageData' => $this->buildPageData('page.about')
         ]);
     }
