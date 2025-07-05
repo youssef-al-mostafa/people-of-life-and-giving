@@ -7,39 +7,44 @@ import { initializeTheme } from './hooks/use-appearance';
 
 const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
 
-createInertiaApp({
-    title: (title) => `${title} - ${appName}`,
-    resolve: async (name) => {
-        if (name.startsWith('website/')) {
+document.addEventListener('DOMContentLoaded', () => {
+    createInertiaApp({
+        title: (title) => `${title} - ${appName}`,
+        resolve: async (name) => {
+            if (name.startsWith('website/')) {
+                try {
+                    return await resolvePageComponent(
+                        `./pages/${name}.tsx`,
+                        import.meta.glob('./pages/website/**/*.tsx')
+                    );
+                } catch (error) {
+                    console.error(`Website page component "${name}" not found`);
+                    throw error;
+                }
+            }
+
             try {
                 return await resolvePageComponent(
-                    `./pages/${name}.tsx`,
-                    import.meta.glob('./pages/website/**/*.tsx')
+                    `./pages/admin/${name}.tsx`,
+                    import.meta.glob('./pages/admin/**/*.tsx')
                 );
             } catch (error) {
-                console.error(`Website page component "${name}" not found`);
+                console.error(`Admin page component "${name}" not found`);
                 throw error;
             }
-        }
-
-        try {
-            return await resolvePageComponent(
-                `./pages/admin/${name}.tsx`,
-                import.meta.glob('./pages/admin/**/*.tsx')
-            );
-        } catch (error) {
-            console.error(`Admin page component "${name}" not found`);
-            throw error;
-        }
-    },
-    setup({ el, App, props }) {
-        const root = createRoot(el);
-
-        root.render(<App {...props} />);
-    },
-    progress: {
-        color: '#4B5563',
-    },
+        },
+        setup({ el, App, props }) {
+            if (!el) {
+                console.error('Could not find app element');
+                return;
+            }
+            const root = createRoot(el);
+            root.render(<App {...props} />);
+        },
+        progress: {
+            color: '#4B5563',
+        },
+    });
 });
 
 initializeTheme();

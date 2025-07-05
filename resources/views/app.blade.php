@@ -44,8 +44,8 @@
         href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" />
 
     @routes
-    @viteReactRefresh
     @inertiaHead
+    @viteReactRefresh
     @vite(['resources/css/app.css', 'resources/js/app.tsx'])
 
 </head>
