@@ -6,7 +6,9 @@ use Illuminate\Support\Facades\URL;
 
 Route::get('/', [WebsiteController::class, 'home'])->name('home');
 
-if (env('APP_ENV')) { URL::forceScheme('https'); }
+if (env('APP_ENV') == 'production') {
+    URL::forceScheme('https');
+}
 
 require __DIR__ . '/auth.php';
 require __DIR__ . '/admin.php';
