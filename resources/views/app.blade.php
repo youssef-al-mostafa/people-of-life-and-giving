@@ -63,7 +63,8 @@
 
     @routes
     @viteReactRefresh
-    @vite(['resources/js/app.tsx', "resources/js/pages/{$page['component']}.tsx"])
+    {{-- FIXED: Only load the main app.tsx, let dynamic imports handle the components --}}
+    @vite(['resources/js/app.tsx'])
     @inertiaHead
 </head>
 
@@ -82,6 +83,7 @@
 
     @inertia
 
+    {{-- Debug information after @inertia --}}
     @if(config('app.debug'))
     <script>
         console.log('[DEBUG] @inertia directive rendered', {
@@ -90,6 +92,7 @@
             timestamp: new Date().toISOString()
         });
 
+        // Log the actual content of the app element
         const appEl = document.getElementById('app');
         if (appEl) {
             console.log('[DEBUG] App element details:', {
@@ -104,6 +107,7 @@
                 hasDataPage: !!appEl.dataset.page
             });
 
+            // Try to parse the data-page if it exists
             if (appEl.dataset.page) {
                 try {
                     const pageData = JSON.parse(appEl.dataset.page);
