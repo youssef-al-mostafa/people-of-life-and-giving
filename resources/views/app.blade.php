@@ -38,14 +38,29 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" />
 
-    @routes
-    @viteReactRefresh
-    @vite(['resources/js/app.tsx'])
-    @inertiaHead
+    {{-- Manual route registration --}}
+    <script>
+        window.route = function(name, params, absolute) {
+            // Simple route helper - you can expand this
+            const routes = {
+                'home': '/',
+                'admin.dashboard': '/admin/dashboard',
+                // Add other routes as needed
+            };
+            return routes[name] || '/';
+        };
+    </script>
+
+    {{-- Manual Vite assets --}}
+    <link rel="stylesheet" href="{{ asset('build/assets/app-' . substr(md5('app.css'), 0, 8) . '.css') }}" />
+    <script type="module" src="{{ asset('build/assets/app-' . substr(md5('app.tsx'), 0, 8) . '.js') }}"></script>
+
+    {{-- Inertia head will be populated by React --}}
 </head>
 
 <body class="font-sans antialiased">
-    @inertia
+    {{-- Manual @inertia replacement --}}
+    <div id="app" data-page="{{ json_encode($page) }}"></div>
 </body>
 
 </html>
